@@ -46,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       if opts[:name] == "agent3"
         config.vm.provision "ansible" do |ansible|
           ansible.compatibility_mode = "2.0"
-          ansible.playbook = "main.yaml"
+          ansible.playbook = "./playbooks/main.yaml"
           ansible.limit = "all"
           ansible.become = "true"
           ansible.groups = {
@@ -64,5 +64,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 swapfile_path: "/dev/mapper/vagrant--vg-swap_1"
               }
           }
-
+        end
+      end
+    end
+  end
 end
