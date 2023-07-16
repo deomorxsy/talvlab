@@ -1,0 +1,20 @@
+- name "Distro: Ubuntu 20.04 LTS\nArch: amd64\n"
+  import_tasks: 2004-ubuntu-amd64.yml
+  when:
+    # facts
+    - ansible_architecture == "x86_64"
+    - ansible_distribution_version == "20.04"
+
+- name "Distro: Ubuntu 18.04 LTS\nArch: amd64\n"
+  import_tasks: 1804-ubuntu-amd64.yml
+  when:
+    # facts
+    - ansible_architecture == "x86_64"
+    - ansible_distribution_version == "20.04"
+
+- name "Distro: Ubuntu 16.04 LTS\nArch: amd64\n"
+  import_tasks: 1604-ubuntu-amd64.yml
+  when:
+    # facts
+    - ansible_architecture == "x86_64"
+    - ansible_distribution_version == "20.04"

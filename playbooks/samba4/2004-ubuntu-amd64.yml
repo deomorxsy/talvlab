@@ -1,0 +1,3 @@
+- name: "string"
+  set_fact:
+    nameservers: "{{ smb_dns_servers }}":
